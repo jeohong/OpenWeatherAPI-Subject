@@ -12,9 +12,12 @@
 		A3ECFD112999F14500444B9D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3ECFD102999F14500444B9D /* ViewController.swift */; };
 		A3ECFD162999F14500444B9D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A3ECFD152999F14500444B9D /* Assets.xcassets */; };
 		A3ECFD192999F14500444B9D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3ECFD172999F14500444B9D /* LaunchScreen.storyboard */; };
+		E1A0AF2B62E22F8D4E10C6B7 /* Pods_AutocryptSubject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35E335D1574445DAC26AC09A /* Pods_AutocryptSubject.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		35E335D1574445DAC26AC09A /* Pods_AutocryptSubject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AutocryptSubject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		68664E110C460B3FDEC4EAF6 /* Pods-AutocryptSubject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AutocryptSubject.debug.xcconfig"; path = "Target Support Files/Pods-AutocryptSubject/Pods-AutocryptSubject.debug.xcconfig"; sourceTree = "<group>"; };
 		A3ECFD092999F14500444B9D /* AutocryptSubject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AutocryptSubject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3ECFD0C2999F14500444B9D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A3ECFD0E2999F14500444B9D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -22,6 +25,7 @@
 		A3ECFD152999F14500444B9D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A3ECFD182999F14500444B9D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A3ECFD1A2999F14500444B9D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A99503D0B39872FC410F24FF /* Pods-AutocryptSubject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AutocryptSubject.release.xcconfig"; path = "Target Support Files/Pods-AutocryptSubject/Pods-AutocryptSubject.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +33,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E1A0AF2B62E22F8D4E10C6B7 /* Pods_AutocryptSubject.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		84F88DB41356E9A153F47C51 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				35E335D1574445DAC26AC09A /* Pods_AutocryptSubject.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		A3ECFD002999F14500444B9D = {
 			isa = PBXGroup;
 			children = (
 				A3ECFD0B2999F14500444B9D /* AutocryptSubject */,
 				A3ECFD0A2999F14500444B9D /* Products */,
+				F526D70753E2AC7FD605D4FC /* Pods */,
+				84F88DB41356E9A153F47C51 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -64,6 +79,16 @@
 			path = AutocryptSubject;
 			sourceTree = "<group>";
 		};
+		F526D70753E2AC7FD605D4FC /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				68664E110C460B3FDEC4EAF6 /* Pods-AutocryptSubject.debug.xcconfig */,
+				A99503D0B39872FC410F24FF /* Pods-AutocryptSubject.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -71,9 +96,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A3ECFD1D2999F14500444B9D /* Build configuration list for PBXNativeTarget "AutocryptSubject" */;
 			buildPhases = (
+				7E285C29128C4D58065FB309 /* [CP] Check Pods Manifest.lock */,
 				A3ECFD052999F14500444B9D /* Sources */,
 				A3ECFD062999F14500444B9D /* Frameworks */,
 				A3ECFD072999F14500444B9D /* Resources */,
+				15051B744AFCEAB986ACEAAA /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -128,6 +155,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		15051B744AFCEAB986ACEAAA /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AutocryptSubject/Pods-AutocryptSubject-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AutocryptSubject/Pods-AutocryptSubject-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AutocryptSubject/Pods-AutocryptSubject-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7E285C29128C4D58065FB309 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AutocryptSubject-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		A3ECFD052999F14500444B9D /* Sources */ = {
@@ -270,6 +339,7 @@
 		};
 		A3ECFD1E2999F14500444B9D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 68664E110C460B3FDEC4EAF6 /* Pods-AutocryptSubject.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -297,6 +367,7 @@
 		};
 		A3ECFD1F2999F14500444B9D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A99503D0B39872FC410F24FF /* Pods-AutocryptSubject.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
