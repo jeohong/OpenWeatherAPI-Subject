@@ -9,9 +9,9 @@
 /* Begin PBXBuildFile section */
 		A37D6439299A261F005654E3 /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37D6438299A261F005654E3 /* UIColor+.swift */; };
 		A37D643B299A2640005654E3 /* UIFont+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37D643A299A2640005654E3 /* UIFont+.swift */; };
+		A37D643F299A5CA4005654E3 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37D643E299A5CA4005654E3 /* MainViewController.swift */; };
 		A3ECFD0D2999F14500444B9D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3ECFD0C2999F14500444B9D /* AppDelegate.swift */; };
 		A3ECFD0F2999F14500444B9D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3ECFD0E2999F14500444B9D /* SceneDelegate.swift */; };
-		A3ECFD112999F14500444B9D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3ECFD102999F14500444B9D /* ViewController.swift */; };
 		A3ECFD162999F14500444B9D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A3ECFD152999F14500444B9D /* Assets.xcassets */; };
 		A3ECFD192999F14500444B9D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3ECFD172999F14500444B9D /* LaunchScreen.storyboard */; };
 		E1A0AF2B62E22F8D4E10C6B7 /* Pods_AutocryptSubject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35E335D1574445DAC26AC09A /* Pods_AutocryptSubject.framework */; };
@@ -22,10 +22,10 @@
 		68664E110C460B3FDEC4EAF6 /* Pods-AutocryptSubject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AutocryptSubject.debug.xcconfig"; path = "Target Support Files/Pods-AutocryptSubject/Pods-AutocryptSubject.debug.xcconfig"; sourceTree = "<group>"; };
 		A37D6438299A261F005654E3 /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
 		A37D643A299A2640005654E3 /* UIFont+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+.swift"; sourceTree = "<group>"; };
+		A37D643E299A5CA4005654E3 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		A3ECFD092999F14500444B9D /* AutocryptSubject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AutocryptSubject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3ECFD0C2999F14500444B9D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A3ECFD0E2999F14500444B9D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		A3ECFD102999F14500444B9D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		A3ECFD152999F14500444B9D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A3ECFD182999F14500444B9D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A3ECFD1A2999F14500444B9D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -61,6 +61,22 @@
 			path = Extentions;
 			sourceTree = "<group>";
 		};
+		A37D643C299A5C57005654E3 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A37D643D299A5C63005654E3 /* MainView */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		A37D643D299A5C63005654E3 /* MainView */ = {
+			isa = PBXGroup;
+			children = (
+				A37D643E299A5CA4005654E3 /* MainViewController.swift */,
+			);
+			path = MainView;
+			sourceTree = "<group>";
+		};
 		A3ECFD002999F14500444B9D = {
 			isa = PBXGroup;
 			children = (
@@ -82,10 +98,10 @@
 		A3ECFD0B2999F14500444B9D /* AutocryptSubject */ = {
 			isa = PBXGroup;
 			children = (
+				A37D643C299A5C57005654E3 /* Views */,
 				A37D6437299A260F005654E3 /* Extentions */,
 				A3ECFD0C2999F14500444B9D /* AppDelegate.swift */,
 				A3ECFD0E2999F14500444B9D /* SceneDelegate.swift */,
-				A3ECFD102999F14500444B9D /* ViewController.swift */,
 				A3ECFD152999F14500444B9D /* Assets.xcassets */,
 				A3ECFD172999F14500444B9D /* LaunchScreen.storyboard */,
 				A3ECFD1A2999F14500444B9D /* Info.plist */,
@@ -216,9 +232,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A3ECFD112999F14500444B9D /* ViewController.swift in Sources */,
 				A37D6439299A261F005654E3 /* UIColor+.swift in Sources */,
 				A37D643B299A2640005654E3 /* UIFont+.swift in Sources */,
+				A37D643F299A5CA4005654E3 /* MainViewController.swift in Sources */,
 				A3ECFD0D2999F14500444B9D /* AppDelegate.swift in Sources */,
 				A3ECFD0F2999F14500444B9D /* SceneDelegate.swift in Sources */,
 			);
