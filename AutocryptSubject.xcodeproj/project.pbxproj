@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A37D6439299A261F005654E3 /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37D6438299A261F005654E3 /* UIColor+.swift */; };
 		A3ECFD0D2999F14500444B9D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3ECFD0C2999F14500444B9D /* AppDelegate.swift */; };
 		A3ECFD0F2999F14500444B9D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3ECFD0E2999F14500444B9D /* SceneDelegate.swift */; };
 		A3ECFD112999F14500444B9D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3ECFD102999F14500444B9D /* ViewController.swift */; };
@@ -18,6 +19,7 @@
 /* Begin PBXFileReference section */
 		35E335D1574445DAC26AC09A /* Pods_AutocryptSubject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AutocryptSubject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		68664E110C460B3FDEC4EAF6 /* Pods-AutocryptSubject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AutocryptSubject.debug.xcconfig"; path = "Target Support Files/Pods-AutocryptSubject/Pods-AutocryptSubject.debug.xcconfig"; sourceTree = "<group>"; };
+		A37D6438299A261F005654E3 /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
 		A3ECFD092999F14500444B9D /* AutocryptSubject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AutocryptSubject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3ECFD0C2999F14500444B9D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A3ECFD0E2999F14500444B9D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -48,6 +50,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		A37D6437299A260F005654E3 /* Extentions */ = {
+			isa = PBXGroup;
+			children = (
+				A37D6438299A261F005654E3 /* UIColor+.swift */,
+			);
+			path = Extentions;
+			sourceTree = "<group>";
+		};
 		A3ECFD002999F14500444B9D = {
 			isa = PBXGroup;
 			children = (
@@ -69,6 +79,7 @@
 		A3ECFD0B2999F14500444B9D /* AutocryptSubject */ = {
 			isa = PBXGroup;
 			children = (
+				A37D6437299A260F005654E3 /* Extentions */,
 				A3ECFD0C2999F14500444B9D /* AppDelegate.swift */,
 				A3ECFD0E2999F14500444B9D /* SceneDelegate.swift */,
 				A3ECFD102999F14500444B9D /* ViewController.swift */,
@@ -203,6 +214,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A3ECFD112999F14500444B9D /* ViewController.swift in Sources */,
+				A37D6439299A261F005654E3 /* UIColor+.swift in Sources */,
 				A3ECFD0D2999F14500444B9D /* AppDelegate.swift in Sources */,
 				A3ECFD0F2999F14500444B9D /* SceneDelegate.swift in Sources */,
 			);
