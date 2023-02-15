@@ -59,7 +59,7 @@ class WeatherCollectionViewCell: UICollectionViewCell {
         weatherIcon.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
             make.top.equalTo(timeLabel.snp.bottom).offset(5)
-            make.height.width.equalTo(40)
+            make.height.width.equalTo(30)
         }
         
         self.addSubview(temperatureLabel)
@@ -75,6 +75,6 @@ class WeatherCollectionViewCell: UICollectionViewCell {
         
         let labelsHeights = timeLabelHeight + temperatureLabelHeight
         
-        return Double(labelsHeights) + 60
+        return Double(labelsHeights) + 50
     }
 }
