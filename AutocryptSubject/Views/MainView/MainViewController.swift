@@ -19,6 +19,7 @@ class MainViewController: UIViewController {
 
             let tapped = UITapGestureRecognizer(target: self, action: #selector(presentSearchView))
             textfield.addGestureRecognizer(tapped)
+            tapped.cancelsTouchesInView = false
         }
 
         return searchBar
@@ -34,6 +35,7 @@ class MainViewController: UIViewController {
     private let contentView = UIView()
 
     private let locationInfoView = LocationInfoView()
+    private let twoDaysWeatherView = TwoDaysWeatherView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -60,6 +62,12 @@ class MainViewController: UIViewController {
         locationInfoView.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
             make.top.equalToSuperview().offset(20)
+        }
+        
+        contentView.addSubview(twoDaysWeatherView)
+        twoDaysWeatherView.snp.makeConstraints { make in
+            make.centerX.equalToSuperview()
+            make.top.equalTo(locationInfoView.stackView.snp.bottom).offset(20)
         }
     }
 

@@ -9,10 +9,14 @@ import UIKit
 import SnapKit
 
 class WeatherCollectionViewCell: UICollectionViewCell {
+    static let identifier = "WeatherCollectionViewCell"
+
     let timeLabel: UILabel = {
         let label = UILabel()
         label.font = .theme.footnote
         label.textColor = .white
+        label.text = "지금"
+        label.sizeToFit()
         
         return label
     }()
@@ -28,6 +32,8 @@ class WeatherCollectionViewCell: UICollectionViewCell {
         let label = UILabel()
         label.font = .theme.footnote
         label.textColor = .white
+        label.text = "7º"
+        label.sizeToFit()
         
         return label
     }()
@@ -50,15 +56,25 @@ class WeatherCollectionViewCell: UICollectionViewCell {
         }
         
         self.addSubview(weatherIcon)
-        timeLabel.snp.makeConstraints { make in
+        weatherIcon.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
             make.top.equalTo(timeLabel.snp.bottom).offset(5)
+            make.height.width.equalTo(40)
         }
         
         self.addSubview(temperatureLabel)
-        timeLabel.snp.makeConstraints { make in
+        temperatureLabel.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
             make.top.equalTo(weatherIcon.snp.bottom).offset(5)
         }
+    }
+    
+    func getContentHeight() -> Double {
+        let timeLabelHeight = timeLabel.frame.height
+        let temperatureLabelHeight = temperatureLabel.frame.height
+        
+        let labelsHeights = timeLabelHeight + temperatureLabelHeight
+        
+        return Double(labelsHeights) + 60
     }
 }

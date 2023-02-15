@@ -30,6 +30,28 @@ class TwoDaysWeatherView: UIView {
     
     private let divider = Divider()
     
+    private lazy var weatherCollectionView: UICollectionView = {
+        let flowLayout = UICollectionViewFlowLayout()
+        flowLayout.scrollDirection = .horizontal
+        flowLayout.minimumLineSpacing = 10
+        
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: flowLayout)
+        collectionView.backgroundColor = .clear
+        
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        collectionView.register(WeatherCollectionViewCell.self, forCellWithReuseIdentifier: WeatherCollectionViewCell.identifier)
+        
+        collectionView.isUserInteractionEnabled = true
+        collectionView.isScrollEnabled = true
+        collectionView.showsHorizontalScrollIndicator = true
+        collectionView.bounces = true
+        collectionView.alwaysBounceHorizontal = true
+        collectionView.isPagingEnabled = true
+        
+        return collectionView
+    }()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         
@@ -53,8 +75,38 @@ class TwoDaysWeatherView: UIView {
     }
     
     private func setupStackView() {
-        [windSpeedLabel, divider].forEach {
+        [windSpeedLabel, divider, weatherCollectionView].forEach {
             self.stackView.addArrangedSubview($0)
         }
+        
+        weatherCollectionView.snp.makeConstraints { make in
+            make.width.equalTo(divider)
+            make.height.equalTo(WeatherCollectionViewCell().getContentHeight())
+        }
+    }
+}
+
+extension TwoDaysWeatherView: UICollectionViewDataSource, UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 48 / 3 + 1
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: WeatherCollectionViewCell.identifier, for: indexPath)
+        
+        if let cell = cell as? WeatherCollectionViewCell {
+            cell.timeLabel.text = "지금"
+            cell.weatherIcon.image = UIImage(named: "01d")
+            cell.temperatureLabel.text = "7º"
+        }
+                
+        return cell
+    }
+}
+
+extension TwoDaysWeatherView: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+
+        return CGSize(width: collectionView.frame.width / 7, height: collectionView.frame.height)
     }
 }
