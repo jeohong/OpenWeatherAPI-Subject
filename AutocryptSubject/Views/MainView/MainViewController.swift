@@ -36,13 +36,7 @@ class MainViewController: UIViewController {
 
     private let locationInfoView = LocationInfoView()
     private let twoDaysWeatherView = TwoDaysWeatherView()
-    
-    //test
-    private let locationInfoView1 = LocationInfoView()
-    private let locationInfoView2 = LocationInfoView()
-    private let locationInfoView3 = LocationInfoView()
-    private let locationInfoView4 = LocationInfoView()
-    private let locationInfoView5 = LocationInfoView()
+    private let fiveDaysWeatherView = FiveDaysWeatherView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -76,6 +70,12 @@ class MainViewController: UIViewController {
         twoDaysWeatherView.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
             make.top.equalTo(locationInfoView.stackView.snp.bottom).offset(20)
+        }
+        
+        contentView.addSubview(fiveDaysWeatherView)
+        fiveDaysWeatherView.snp.makeConstraints { make in
+            make.centerX.equalToSuperview()
+            make.top.equalTo(twoDaysWeatherView.stackView.snp.bottom).offset(20)
         }
     }
 
