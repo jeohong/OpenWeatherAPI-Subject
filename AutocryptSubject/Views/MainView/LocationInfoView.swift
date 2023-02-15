@@ -9,6 +9,15 @@ import UIKit
 import SnapKit
 
 class LocationInfoView: UIView {
+    let stackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.axis = .vertical
+        stackView.alignment = .center
+        stackView.spacing = 5
+        
+        return stackView
+    }()
+    
     private let locationLabel: UILabel = {
         let label = UILabel()
         // TODO: 추후 데이터 연결
@@ -52,6 +61,7 @@ class LocationInfoView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
+        setupStackView()
         setupLayout()
     }
     
@@ -60,28 +70,17 @@ class LocationInfoView: UIView {
     }
     
     private func setupLayout() {
-        self.addSubview(locationLabel)
-        locationLabel.snp.makeConstraints { make in
-            make.centerX.equalTo(self.snp.centerX)
-            make.top.equalToSuperview()
+        self.addSubview(stackView)
+        stackView.snp.makeConstraints { make in
+            make.top.bottom.centerX.equalToSuperview()
+        }
+    }
+    
+    private func setupStackView() {
+        [locationLabel, temperatureLabel, climateLabel, todayTemperatureLabel].forEach {
+            self.stackView.addArrangedSubview($0)
         }
         
-        self.addSubview(temperatureLabel)
-        temperatureLabel.snp.makeConstraints { make in
-            make.centerX.equalTo(self.snp.centerX)
-            make.top.equalTo(locationLabel.snp.bottom).offset(5)
-        }
-        
-        self.addSubview(climateLabel)
-        climateLabel.snp.makeConstraints { make in
-            make.centerX.equalTo(self.snp.centerX)
-            make.top.equalTo(temperatureLabel.snp.bottom).offset(5)
-        }
-        
-        self.addSubview(todayTemperatureLabel)
-        todayTemperatureLabel.snp.makeConstraints { make in
-            make.centerX.equalTo(self.snp.centerX)
-            make.top.equalTo(climateLabel.snp.bottom)
-        }
+        stackView.setCustomSpacing(0, after: climateLabel)
     }
 }
