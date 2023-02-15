@@ -41,14 +41,7 @@ class TwoDaysWeatherView: UIView {
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.register(WeatherCollectionViewCell.self, forCellWithReuseIdentifier: WeatherCollectionViewCell.identifier)
-        
-        collectionView.isUserInteractionEnabled = true
-        collectionView.isScrollEnabled = true
-        collectionView.showsHorizontalScrollIndicator = true
-        collectionView.bounces = true
-        collectionView.alwaysBounceHorizontal = true
-        collectionView.isPagingEnabled = true
-        
+                
         return collectionView
     }()
     
@@ -60,6 +53,8 @@ class TwoDaysWeatherView: UIView {
         
         setupStackView()
         setupLayout()
+        
+        self.bringSubviewToFront(weatherCollectionView)
     }
     
     required init?(coder: NSCoder) {
@@ -80,7 +75,7 @@ class TwoDaysWeatherView: UIView {
         }
         
         weatherCollectionView.snp.makeConstraints { make in
-            make.width.equalTo(divider)
+            make.leading.trailing.equalToSuperview()
             make.height.equalTo(WeatherCollectionViewCell().getContentHeight())
         }
     }
