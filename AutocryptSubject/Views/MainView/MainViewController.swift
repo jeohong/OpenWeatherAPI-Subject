@@ -33,6 +33,8 @@ class MainViewController: UIViewController {
     
     private let contentView = UIView()
     
+    private let locationInfoView = LocationInfoView()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -52,6 +54,12 @@ class MainViewController: UIViewController {
         contentView.snp.makeConstraints { make in
             make.width.equalToSuperview()
             make.top.bottom.equalToSuperview()
+        }
+        
+        contentView.addSubview(locationInfoView)
+        locationInfoView.snp.makeConstraints { make in
+            make.centerX.equalToSuperview()
+            make.top.equalTo(contentView.snp.bottom).offset(20)
         }
     }
     
